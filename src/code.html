@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedHive - Where Your Health Story Lives</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e59f30",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#1a1a1a",
+                        "text-light": "#000000",
+                        "text-dark": "#ffffff",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#2a2a2a",
+                        "border-light": "#e5e2dc",
+                        "border-dark": "#4a4a4a",
+                        "muted-light": "#887a63",
+                        "muted-dark": "#a0a0a0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-border-light/80 dark:border-border-dark/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto max-w-6xl px-4">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-2">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#features">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#how-it-works">How It Works</a>
+</nav>
+<button class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Get Started</span>
+</button>
+<button class="md:hidden flex items-center justify-center p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="py-20 md:py-32">
+<div class="container mx-auto max-w-6xl px-4">
+<div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+<div class="flex flex-col gap-6 text-center md:text-left">
+<h1 class="text-5xl font-black leading-tight tracking-tighter md:text-6xl">MedHive</h1>
+<h2 class="text-lg font-normal text-muted-light dark:text-muted-dark md:text-xl">Where Your Health Story Lives.</h2>
+<div class="mt-4 flex justify-center md:justify-start">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Get Started</span>
+</button>
+</div>
+</div>
+<div class="w-full aspect-square md:aspect-auto md:h-[400px] bg-center bg-no-repeat bg-cover rounded-xl" data-alt="A doctor types on a digital tablet, viewing a patient's health record." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlYZP44GwEO_dMNLocYU1g4FXR6A6CkGEn6Wl70jlgM0TrgRr35p56t8THKe6MC0_IZn_oTzWbO68Xh78SEYqCT-q2JV1QwRFDbcXyjRUF-LEaSPVRZWNmSXhi9vQPwJARk7enI45D6O1AybAj7WdqnzaynRaeavyBbzQemMZWAIeS-oRV45ak0KUvYjyoNnqfnM2rQZIMePqNUZzlQdw8iD7lygCrCy3hZnQyJWHjYMnfc145Oc5SI424PKFTiCoI2c2ZQojRxtE');"></div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-card-light dark:bg-card-dark" id="features">
+<div class="container mx-auto max-w-6xl px-4">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-3xl font-bold tracking-tight md:text-4xl">All Your Health Data, in One Secure Place.</h2>
+<p class="text-muted-light dark:text-muted-dark text-base md:text-lg max-w-3xl mx-auto">MedHive simplifies your healthcare journey by bringing all your medical information together, securely and intelligently.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border-light dark:border-border-dark p-6 bg-background-light dark:bg-background-dark">
+<span class="material-symbols-outlined text-primary text-4xl">folder_shared</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">Unified Health Records</h3>
+<p class="text-muted-light dark:text-muted-dark text-sm">One complete view of your medical history from different providers.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border-light dark:border-border-dark p-6 bg-background-light dark:bg-background-dark">
+<span class="material-symbols-outlined text-primary text-4xl">document_scanner</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">Prescription Scanner</h3>
+<p class="text-muted-light dark:text-muted-dark text-sm">Instantly digitize your prescriptions with a quick scan for clear, readable text.</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border-light dark:border-border-dark p-6 bg-background-light dark:bg-background-dark">
+<span class="material-symbols-outlined text-primary text-4xl">hub</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">Doctor &amp; Lab Integration</h3>
+<p class="text-muted-light dark:text-muted-dark text-sm">Seamlessly connect with your doctors and labs to keep your records up-to-date.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20" id="how-it-works">
+<div class="container mx-auto max-w-6xl px-4">
+<div class="flex flex-col gap-12">
+<div class="text-center">
+<h2 class="text-3xl font-bold tracking-tight md:text-4xl">Get Started in Three Simple Steps</h2>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="flex flex-col gap-4 items-center text-center rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-8">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">upload_file</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">1. Upload Records</h3>
+<p class="text-muted-light dark:text-muted-dark text-sm">Securely upload or connect your existing medical documents and prescriptions.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 items-center text-center rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-8">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">visibility</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">2. View &amp; Track</h3>
+<p class="text-muted-light dark:text-muted-dark text-sm">See your complete health history in one place and track key metrics over time.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 items-center text-center rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-8">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">share</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">3. Share with Doctors</h3>
+<p class="text-muted-light dark:text-muted-dark text-sm">Grant secure, temporary access to your records for your healthcare providers.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-card-light dark:bg-card-dark">
+<div class="container mx-auto max-w-6xl px-4 py-8">
+<div class="flex flex-col items-center justify-center gap-6 text-center text-sm text-muted-light dark:text-muted-dark">
+<div class="flex flex-col gap-1">
+<p>contact@medhive.com</p>
+<p>(555) 123-4567</p>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0 3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.116 0-3.483.011-4.691.068-2.61.118-3.832 1.34-3.951 3.951-.057 1.207-.067 1.574-.067 4.69 0 3.116.011 3.483.067 4.691.119 2.61 1.341 3.832 3.951 3.951.21.009.431.018 1.15.021.72.002 1.028.003 2.541.003s1.821-.001 2.541-.003c.72-.003 1.028-.009 1.15-.021 2.61-.119 3.832-1.341 3.951-3.951.057-1.207.067-1.574.067-4.691 0-3.116-.011-3.483-.067-4.691-.119-2.61-1.34-3.832-3.951-3.951C15.483 3.614 15.116 3.604 12 3.604zm0 4.885a3.442 3.442 0 100 6.884 3.442 3.442 0 000-6.884zM12 15a3 3 0 110-6 3 3 0 010 6zm6.406-9.696a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z"></path>
+</svg>
+</a>
+</div>
+</div>
+<div class="mt-8 border-t border-primary/50 pt-8">
+<p class="text-center text-sm text-muted-light dark:text-muted-dark">© 2024 MedHive. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
