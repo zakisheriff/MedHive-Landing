@@ -4,11 +4,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Explicitly set borders and outlines to prevent system color changes */
+  border-color: inherit; 
+  outline-color: inherit;
 }
+
+/* Ensuring mode-agnostic colors:
+  The use of fixed hex codes (e.g., #000000, #ffffff, #dca349) and 
+  fixed RGBA values prevents the browser from using system color variables 
+  that switch between light and dark mode defaults.
+*/
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  /* Fixed dark background gradient */
   background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  /* Fixed text color */
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -39,11 +50,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Fixed semi-transparent dark background */
   background: rgba(0, 0, 0, 0.5); 
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .nav-content {
+  /* Fixed dark background and border/shadow colors */
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(220, 163, 73, 0.3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -65,6 +78,7 @@ body {
 .logo {
   font-size: 24px;
   font-weight: 700;
+  /* Fixed accent color */
   color: #dca349;
   letter-spacing: -0.5px;
 }
@@ -76,6 +90,7 @@ body {
 }
 
 .nav-links a {
+  /* Fixed text color */
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
@@ -85,6 +100,7 @@ body {
 }
 
 .nav-links a:hover {
+  /* Fixed hover color */
   color: #dca349;
 }
 
@@ -95,6 +111,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
+  /* Fixed accent color */
   background: #dca349;
   transition: width 0.3s ease;
 }
@@ -103,55 +120,60 @@ body {
   width: 100%;
 }
 
-/* 🌟 MODIFIED Mobile Menu (Modal Style) 🌟 */
+/* 🌟 CORRECTED Mobile Menu (Modal Style) 🌟 */
 .mobile-menu {
   position: fixed;
-  top: 90px; /* Adjust based on your navbar height + spacing */
+  top: 90px; 
   left: 50%;
-  transform: translate(-50%, -20px) scale(0.9);
+  
+  transform-origin: top center;
+  
+  transform: translate(-50%, -20px) scale(0.95);
   width: 90%;
   max-width: 300px;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   
-  /* Glass Card Styling is now done via the .glass-card class added in App.js */
+  /* Fixed dark background */
   background: rgba(0, 0, 0, 0.95); 
   border-radius: 20px;
   
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1.2); 
   z-index: 999;
   
-  padding: 0 20px; /* Start with no vertical padding */
+  padding: 0 20px;
 }
 
 .mobile-menu.active {
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
-  max-height: 500px; /* Enough to show content */
-  padding: 20px 20px; /* Apply padding when active */
+  max-height: 500px;
+  padding: 20px 20px;
 }
 
 .mobile-menu-links {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Tighter links for modal */
+  gap: 10px; 
   padding: 0;
 }
 
 .mobile-menu-links a {
   display: block;
+  /* Fixed text color */
   color: #ffffff;
   text-decoration: none;
-  font-size: 16px; /* Smaller font size */
+  font-size: 16px;
   font-weight: 500;
-  padding: 10px 15px; /* Smaller padding */
+  padding: 10px 15px;
   border-radius: 10px;
   transition: all 0.3s ease;
   border: 1px solid transparent;
 }
 
 .mobile-menu-links a:hover {
+  /* Fixed hover colors */
   color: #dca349;
   background: rgba(220, 163, 73, 0.1);
   border-color: rgba(220, 163, 73, 0.3);
@@ -164,6 +186,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  /* Fixed dark overlay background */
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   visibility: hidden;
@@ -187,6 +210,7 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  /* Fixed colors */
   background: rgba(220, 163, 73, 0.7);
   border: 2px solid rgba(255, 255, 255, 0.3);
   display: flex;
@@ -198,6 +222,7 @@ body {
 }
 
 .profile-circle:hover {
+  /* Fixed hover colors */
   background: #dca349;
   box-shadow: 0 4px 15px rgba(220, 163, 73, 0.5);
   transform: scale(1.05);
@@ -206,6 +231,7 @@ body {
 .profile-circle svg {
   width: 24px;
   height: 24px;
+  /* Fixed icon color */
   color: #000000;
   stroke-width: 2;
 }
@@ -227,6 +253,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  /* Fixed gradient colors */
   background: radial-gradient(circle at 30% 20%, rgba(220, 163, 73, 0.15) 0%, transparent 50%),
               radial-gradient(circle at 70% 60%, rgba(220, 163, 73, 0.1) 0%, transparent 50%);
   z-index: 0;
@@ -250,6 +277,7 @@ body {
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 30px;
+  /* Fixed gradient for text fill */
   background: linear-gradient(135deg, #ffffff 0%, #dca349 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -260,6 +288,7 @@ body {
 .hero-subtitle {
   font-size: 22px;
   line-height: 1.6;
+  /* Fixed text color */
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 50px;
   max-width: 800px;
@@ -277,6 +306,7 @@ body {
 /* Glass Cards */
 .glass-card {
   backdrop-filter: blur(10px);
+  /* Fixed background and border colors */
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -286,6 +316,7 @@ body {
 
 .glass-card:hover {
   transform: translateY(-5px);
+  /* Fixed shadow and border colors */
   box-shadow: 0 12px 40px rgba(220, 163, 73, 0.2);
   border-color: rgba(220, 163, 73, 0.3);
 }
@@ -293,6 +324,7 @@ body {
 /* Buttons */
 .glass-btn {
   backdrop-filter: blur(5px);
+  /* Fixed border color */
   border: 1px solid rgba(220, 163, 73, 0.4);
   padding: 16px 40px;
   border-radius: 12px;
@@ -304,11 +336,13 @@ body {
 }
 
 .btn-primary {
+  /* Fixed colors */
   background: rgba(220, 163, 73, 0.3);
   color: #ffffff;
 }
 
 .btn-primary:hover {
+  /* Fixed hover colors */
   background: #dca349;
   color: #000000;
   transform: translateY(-2px);
@@ -316,11 +350,13 @@ body {
 }
 
 .btn-secondary {
+  /* Fixed colors */
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
 .btn-secondary:hover {
+  /* Fixed hover colors */
   background: rgba(255, 255, 255, 0.2);
   border-color: #dca349;
   transform: translateY(-2px);
@@ -344,6 +380,7 @@ body {
 }
 
 .wave-divider path {
+  /* Fixed fill color */
   fill: rgba(220, 163, 73, 0.1);
 }
 
@@ -360,6 +397,7 @@ body {
   font-weight: 800;
   text-align: center;
   margin-bottom: 80px;
+  /* Fixed gradient for text fill */
   background: linear-gradient(135deg, #ffffff 0%, #dca349 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -392,6 +430,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  /* Fixed colors */
   background: rgba(220, 163, 73, 0.1);
   border: 2px solid rgba(220, 163, 73, 0.3);
 }
@@ -399,6 +438,7 @@ body {
 .icon-placeholder svg {
   width: 40px;
   height: 40px;
+  /* Fixed color */
   color: #dca349;
 }
 
@@ -406,18 +446,21 @@ body {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
+  /* Fixed color */
   color: #ffffff;
 }
 
 .problem-card p {
   font-size: 16px;
   line-height: 1.6;
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* Solution Section */
 .solution-section {
   padding: 120px 0;
+  /* Fixed background gradient */
   background: linear-gradient(180deg, transparent 0%, rgba(220, 163, 73, 0.05) 100%);
 }
 
@@ -440,6 +483,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
+  /* Fixed colors */
   background: linear-gradient(135deg, rgba(220, 163, 73, 0.2) 0%, rgba(220, 163, 73, 0.05) 100%);
   border: 1px solid rgba(220, 163, 73, 0.3);
 }
@@ -447,6 +491,7 @@ body {
 .solution-icon svg {
   width: 35px;
   height: 35px;
+  /* Fixed color */
   color: #dca349;
   stroke-width: 2;
 }
@@ -455,12 +500,14 @@ body {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
+  /* Fixed color */
   color: #ffffff;
 }
 
 .solution-card p {
   font-size: 15px;
   line-height: 1.5;
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -488,6 +535,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
+  /* Fixed colors */
   background: rgba(220, 163, 73, 0.1);
   border: 2px solid rgba(220, 163, 73, 0.3);
 }
@@ -495,6 +543,7 @@ body {
 .feature-icon svg {
   width: 35px;
   height: 35px;
+  /* Fixed color */
   color: #dca349;
   stroke-width: 2;
 }
@@ -503,18 +552,21 @@ body {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 15px;
+  /* Fixed color */
   color: #ffffff;
 }
 
 .feature-card p {
   font-size: 16px;
   line-height: 1.6;
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* How It Works */
 .how-it-works {
   padding: 120px 0;
+  /* Fixed background gradient */
   background: linear-gradient(180deg, rgba(220, 163, 73, 0.05) 0%, transparent 100%);
 }
 
@@ -539,6 +591,7 @@ body {
   transform: translateX(-50%);
   width: 50px;
   height: 50px;
+  /* Fixed gradient and colors */
   background: linear-gradient(135deg, #dca349 0%, #b8873d 100%);
   border-radius: 50%;
   display: flex;
@@ -558,6 +611,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  /* Fixed colors */
   background: rgba(220, 163, 73, 0.1);
   border: 2px solid rgba(220, 163, 73, 0.3);
 }
@@ -565,6 +619,7 @@ body {
 .step-icon svg {
   width: 40px;
   height: 40px;
+  /* Fixed color */
   color: #dca349;
   stroke-width: 2;
 }
@@ -573,12 +628,14 @@ body {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 15px;
+  /* Fixed color */
   color: #ffffff;
 }
 
 .step-card p {
   font-size: 16px;
   line-height: 1.6;
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -594,6 +651,7 @@ body {
   padding: 80px 60px;
   text-align: center;
   max-width: 900px;
+  /* Fixed background gradient */
   background: linear-gradient(135deg, rgba(220, 163, 73, 0.15) 0%, rgba(220, 163, 73, 0.05) 100%);
 }
 
@@ -601,6 +659,7 @@ body {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 20px;
+  /* Fixed color */
   color: #ffffff;
   letter-spacing: -1px;
 }
@@ -608,11 +667,13 @@ body {
 .cta-card p {
   font-size: 20px;
   margin-bottom: 40px;
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
 }
 
 .btn-cta {
+  /* Fixed gradient and color */
   background: linear-gradient(135deg, #dca349 0%, #b8873d 100%);
   color: #000000;
   font-size: 20px;
@@ -629,6 +690,7 @@ body {
 
 /* Footer */
 .footer {
+  /* Fixed background and border color */
   background: #000000;
   padding: 60px 40px 40px;
   border-top: 1px solid rgba(220, 163, 73, 0.2);
@@ -646,6 +708,7 @@ body {
 .footer-logo {
   font-size: 28px;
   font-weight: 800;
+  /* Fixed color */
   color: #dca349;
   letter-spacing: -0.5px;
 }
@@ -660,6 +723,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  /* Fixed colors */
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 16px;
@@ -677,6 +741,7 @@ body {
 }
 
 .footer-email:hover {
+  /* Fixed hover colors */
   color: #dca349;
   background: rgba(220, 163, 73, 0.15);
   border-color: rgba(220, 163, 73, 0.4);
@@ -696,6 +761,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
+  /* Fixed colors */
   background: rgba(220, 163, 73, 0.1);
   border: 1px solid rgba(220, 163, 73, 0.2);
   color: rgba(255, 255, 255, 0.8);
@@ -709,6 +775,7 @@ body {
 }
 
 .social-link:hover {
+  /* Fixed hover colors */
   background: rgba(220, 163, 73, 0.2);
   border-color: #dca349;
   color: #dca349;
@@ -722,6 +789,7 @@ body {
 }
 
 .footer-links a {
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 16px;
@@ -729,10 +797,12 @@ body {
 }
 
 .footer-links a:hover {
+  /* Fixed hover color */
   color: #dca349;
 }
 
 .footer-copy {
+  /* Fixed color */
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
 }
@@ -847,6 +917,21 @@ html {
 
 /* Selection */
 ::selection {
+  /* Fixed selection color */
   background: rgba(220, 163, 73, 0.3);
   color: #ffffff;
+}
+
+
+button, a, input, select, textarea {
+  color: inherit; /* Inherit the fixed #ffffff or #dca349 */
+}
+
+/* A final, explicit check for users with dark mode preference. */
+/* This is mostly redundant due to the fixed colors above, but guarantees consistency. */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: #ffffff;
+  }
 }
