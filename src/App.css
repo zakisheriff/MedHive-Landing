@@ -42,6 +42,7 @@ body {
   margin: 0 auto;
   /* Reduced vertical padding for a thinner pill */
   padding: 10px 40px; 
+  /* UPDATED: Aligns content (logo, links, profile) */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,7 +65,7 @@ body {
   height: 40px; 
   object-fit: contain; 
   flex-shrink: 0; 
-  margin-right: 100px;
+  /* UPDATED: Removed right margin to bring it closer to links/profile */
 }
 
 .logo {
@@ -79,6 +80,8 @@ body {
   display: flex;
   /* Action: Adjusted gap for a tighter island look */
   gap: 25px; 
+  /* UPDATED: Add a slight margin on the left to separate from logo */
+  margin-left: 30px; 
 }
 
 .nav-links a {
@@ -107,6 +110,41 @@ body {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* 👤 New Profile Circle Styling */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  /* UPDATED: Added margin to push it away from nav links */
+  margin-left: 30px;
+}
+
+.profile-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(220, 163, 73, 0.7); /* Gold color for visibility */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevents shrinking on smaller screens */
+}
+
+.profile-circle:hover {
+  background: #dca349;
+  box-shadow: 0 4px 15px rgba(220, 163, 73, 0.5);
+  transform: scale(1.05);
+}
+
+.profile-circle svg {
+  width: 24px;
+  height: 24px;
+  color: #000000;
+  stroke-width: 2;
 }
 
 /* Hero Section */
@@ -675,25 +713,30 @@ body {
 
 /* 📱 Responsive */
 /* ===================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  /* Hide text links on smaller screens to maximize space */
+  .nav-links {
+    display: none; 
+  }
+
   .nav-content {
-    /* Action: Keep it as a horizontal pill but allow for better spacing */
-    flex-direction: row; 
-    justify-content: space-between;
-    /* Action: Adjust padding for mobile */
-    padding: 10px 20px; 
+    /* UPDATED: Allows space for the logo and profile circle on the sides */
+    justify-content: space-between; 
+    padding: 10px 20px;
     max-width: 95%;
   }
 
-  .nav-links {
-    gap: 15px;
+  /* Make the logo bigger/more central in the limited space */
+  .nav-logo-image {
+    height: 45px;
   }
   
   .navbar.scrolled .nav-content {
-    /* Ensures the scrolled pill is still centered and uses a max-width */
-    margin: 0 auto;
+    margin: 0 20px;
   }
+}
 
+@media (max-width: 768px) {
   .hero-title {
     font-size: 42px;
   }
@@ -708,6 +751,7 @@ body {
 
   .section-title {
     font-size: 36px;
+    margin-bottom: 50px;
   }
 
   .problem-grid,
@@ -720,6 +764,10 @@ body {
   .cta-card h2 {
     font-size: 32px;
   }
+  
+  .cta-card {
+    padding: 50px 30px;
+  }
 
   .footer-links {
     flex-direction: column;
@@ -727,6 +775,7 @@ body {
     text-align: center;
   }
 }
+
 
 /* Smooth Scrolling */
 html {

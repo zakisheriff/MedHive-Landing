@@ -30,6 +30,9 @@ function App() {
             <a href="#features">Features</a>
             <a href="#contact">Contact</a>
           </div>
+          {/* New Profile Circle */}
+          
+          {/* End New Profile Circle */}
         </div>
       </nav>
 
