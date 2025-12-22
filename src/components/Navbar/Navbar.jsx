@@ -1,8 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 
 const Navbar = ({ scrolled, onLogoClick }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navContentRef = useRef(null);
+
+    // Close menu when clicking outside the nav-content specifically
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (mobileMenuOpen && navContentRef.current && !navContentRef.current.contains(event.target)) {
+                setMobileMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('touchstart', handleClickOutside);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('touchstart', handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [mobileMenuOpen]);
 
     const handleNavClick = (e, sectionId) => {
         e.preventDefault();
@@ -29,31 +47,48 @@ const Navbar = ({ scrolled, onLogoClick }) => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+    };
+
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-            <div className={`nav-content ${mobileMenuOpen ? 'expanded' : ''}`}>
-                <img
-                    src="logode.png"
-                    alt="MedHive Logo"
-                    className="nav-logo-image"
-                    onClick={(e) => {
-                        // On mobile, toggle menu. On desktop, scroll to top
-                        if (window.innerWidth <= 900) {
-                            toggleMobileMenu();
-                        } else {
-                            onLogoClick();
-                        }
-                    }}
+        <>
+            {/* Overlay to catch taps outside menu */}
+            {mobileMenuOpen && (
+                <div
+                    className="nav-overlay"
+                    onClick={closeMobileMenu}
+                    onTouchStart={closeMobileMenu}
                 />
-                <div className={`nav-links ${mobileMenuOpen ? 'show' : ''}`}>
-                    <a href="#" className="mobile-only" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
-                    <a href="#problems" onClick={(e) => handleNavClick(e, 'problems')}>Problems</a>
-                    <a href="#ai" onClick={(e) => handleNavClick(e, 'ai')}>Solutions</a>
-                    <a href="#features" onClick={(e) => handleNavClick(e, 'features')}>Features</a>
-                    <a href="#clinics" onClick={(e) => handleNavClick(e, 'clinics')}>Patient Journey</a>
+            )}
+            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+                <div
+                    className={`nav-content ${mobileMenuOpen ? 'expanded' : ''}`}
+                    ref={navContentRef}
+                >
+                    <img
+                        src="logode.png"
+                        alt="MedHive Logo"
+                        className="nav-logo-image"
+                        onClick={(e) => {
+                            // On mobile, toggle menu. On desktop, scroll to top
+                            if (window.innerWidth <= 900) {
+                                toggleMobileMenu();
+                            } else {
+                                onLogoClick();
+                            }
+                        }}
+                    />
+                    <div className={`nav-links ${mobileMenuOpen ? 'show' : ''}`}>
+                        <a href="#" className="mobile-only" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
+                        <a href="#problems" onClick={(e) => handleNavClick(e, 'problems')}>Problems</a>
+                        <a href="#ai" onClick={(e) => handleNavClick(e, 'ai')}>Solutions</a>
+                        <a href="#features" onClick={(e) => handleNavClick(e, 'features')}>Features</a>
+                        <a href="#clinics" onClick={(e) => handleNavClick(e, 'clinics')}>Patient Journey</a>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </>
     );
 };
 
