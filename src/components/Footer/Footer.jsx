@@ -88,7 +88,6 @@ const Footer = ({ onScrollToTop }) => {
                 {/* Bottom Section - Copyright */}
                 <div className="footer-bottom">
                     <p className="footer-copy">© 2025 MedHive. All rights reserved.</p>
-                    <p className="footer-location">Made with ❤️ in Sri Lanka</p>
                 </div>
             </div>
         </footer>
