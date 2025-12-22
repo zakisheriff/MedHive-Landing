@@ -20,7 +20,7 @@ const Footer = ({ onScrollToTop }) => {
                 {/* Top Section - Logo and Tagline */}
                 <div className="footer-brand">
                     <div className="footer-logo">MedHive</div>
-                    <p className="footer-tagline">Your Health, Unified. Intelligent Care Through AI.</p>
+                    <p className="footer-tagline">Your Health, Unified.</p>
                 </div>
 
                 {/* Middle Section - Links Grid */}
