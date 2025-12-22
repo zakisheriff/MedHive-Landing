@@ -22,7 +22,7 @@
 <br />
 <br />
 
-**[Visit Live Site: https://medhive.theoneatom.com](https://medhive.theoneatom.com)**
+**[Visit Live Site: https://medhive.lk](https://medhive.lk)**
 
 </div>
 
