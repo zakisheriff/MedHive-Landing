@@ -5,8 +5,9 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 120px 40px 80px;
+    padding: 100px 40px 160px;
     overflow: hidden;
+    background: transparent;
 }
 
 .hero-gradient {
@@ -21,47 +22,48 @@
 }
 
 .hero-content {
-    max-width: 1200px;
+    max-width: 1100px;
     z-index: 1;
     position: relative;
 }
 
 .hero-card {
-    padding: 80px 60px;
+    padding: 60px 50px;
     text-align: center;
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
 .hero-title {
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1;
     background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
+    margin-bottom: 5px;
 }
 
 .hero-moto {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
-    line-height: 1.1;
-    margin-bottom: 30px;
+    line-height: 1.2;
+    margin-bottom: 25px;
     background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
-    font-size: 22px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.7;
     color: var(--color-text-secondary);
-    margin-bottom: 50px;
-    max-width: 800px;
+    margin-bottom: 40px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -73,7 +75,7 @@
     flex-wrap: wrap;
 }
 
-/* Wave Divider - Complete seamless design */
+/* Wave Divider - Seamless design connecting to next section */
 .wave-divider {
     position: absolute;
     bottom: 0;
@@ -81,43 +83,46 @@
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 2;
 }
 
 .wave-divider svg {
     position: relative;
     display: block;
     width: 100%;
-    height: 120px;
+    height: 150px;
+    transform: scaleY(1.1);
 }
 
 .wave-divider path {
-    fill: rgba(220, 163, 73, 0.08);
+    fill: rgba(220, 163, 73, 0.06);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .hero {
-        padding: 100px 20px 60px;
+        padding: 90px 20px 120px;
+        min-height: 100svh;
     }
 
     .hero-title {
-        font-size: 42px;
-        letter-spacing: -1px;
+        font-size: 48px;
+        letter-spacing: -2px;
     }
 
     .hero-moto {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .hero-card {
-        padding: 50px 25px;
+        padding: 40px 20px;
     }
 
     .wave-divider svg {
-        height: 80px;
+        height: 100px;
     }
 }

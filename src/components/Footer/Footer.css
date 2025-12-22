@@ -1,6 +1,6 @@
 /* Footer Styles - Multi-column Professional Layout */
 .footer {
-    background: var(--color-bg-dark);
+    background: transparent;
     padding: 80px 40px 40px;
     border-top: 1px solid rgba(220, 163, 73, 0.2);
 }

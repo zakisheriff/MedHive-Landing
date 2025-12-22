@@ -1,27 +1,24 @@
 /* Features Section Styles */
 .features-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 0;
     position: relative;
-    background: linear-gradient(180deg, rgba(220, 163, 73, 0.03) 0%, transparent 50%);
+    padding: 100px 0 120px;
+    background: transparent;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .feature-card {
-    padding: 40px;
+    padding: 35px 30px;
 }
 
 .feature-icon {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 25px;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,33 +28,40 @@
 }
 
 .feature-icon svg {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     color: var(--color-primary);
     stroke-width: 2;
 }
 
 .feature-card h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: var(--color-text-primary);
 }
 
 .feature-card p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
     color: var(--color-text-muted);
 }
 
 /* Mobile Responsive */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .features-section {
-        padding: 80px 0;
+        padding: 80px 0 100px;
     }
 
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .feature-card {

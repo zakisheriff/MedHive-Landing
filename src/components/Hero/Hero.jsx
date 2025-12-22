@@ -24,11 +24,6 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="wave-divider">
-                <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                    <path d="M0,40 C320,100 420,20 720,60 C1020,100 1200,20 1440,50 L1440,120 L0,120 Z" />
-                </svg>
-            </div>
         </section>
     );
 };

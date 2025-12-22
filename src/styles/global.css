@@ -16,7 +16,7 @@
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 
     --container-max-width: 1200px;
-    --section-padding: 120px;
+    --section-padding: 100px;
     --border-radius-sm: 12px;
     --border-radius-md: 16px;
     --border-radius-lg: 20px;
@@ -49,6 +49,7 @@ html {
 /* App Container */
 .app {
     min-height: 100vh;
+    background: var(--color-bg-dark);
 }
 
 /* Shared Container */
@@ -67,7 +68,8 @@ html {
 /* Glass Card - Shared component style */
 .glass-card {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--color-border);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border-radius: var(--border-radius-lg);
@@ -75,7 +77,7 @@ html {
 }
 
 .glass-card:hover {
-    box-shadow: 0 12px 40px rgba(220, 163, 73, 0.2);
+    box-shadow: 0 12px 40px rgba(220, 163, 73, 0.15);
     border-color: var(--color-border-accent);
 }
 
@@ -83,11 +85,11 @@ html {
 .glass-btn {
     backdrop-filter: blur(5px);
     border: 1px solid rgba(220, 163, 73, 0.4);
-    padding: 16px 40px;
+    padding: 14px 35px;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-decoration: none;
@@ -95,7 +97,7 @@ html {
 }
 
 .btn-primary {
-    background: rgba(220, 163, 73, 0.3);
+    background: rgba(220, 163, 73, 0.25);
     color: var(--color-text-primary);
 }
 
@@ -111,32 +113,33 @@ html {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     color: var(--color-text-primary);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--color-primary);
 }
 
 .btn-secondary:active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
     transform: scale(0.98);
 }
 
 .btn-cta {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     color: var(--color-bg-dark);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-    padding: 20px 50px;
+    padding: 18px 45px;
     border: none;
     box-shadow: 0 8px 30px rgba(220, 163, 73, 0.4);
 }
 
 .btn-cta:hover {
     box-shadow: 0 12px 40px rgba(220, 163, 73, 0.6);
+    transform: translateY(-2px);
 }
 
 .btn-cta:active {
@@ -146,10 +149,10 @@ html {
 
 /* Section Title - Shared */
 .section-title {
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -159,8 +162,8 @@ html {
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 36px;
-        margin-bottom: 50px;
+        font-size: 32px;
+        margin-bottom: 40px;
     }
 }
 
@@ -168,7 +171,7 @@ html {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     to {
@@ -180,7 +183,7 @@ html {
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
 
     to {
@@ -190,16 +193,16 @@ html {
 }
 
 .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 .animate-fade-in-delay {
-    animation: fadeIn 1s ease-out 0.3s forwards;
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
     opacity: 0;
 }
 
 .animate-slide-up {
-    animation: slideUp 1s ease-out 0.6s forwards;
+    animation: slideUp 0.8s ease-out 0.4s forwards;
     opacity: 0;
 }
 
@@ -216,4 +219,22 @@ input,
 select,
 textarea {
     color: inherit;
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(220, 163, 73, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 163, 73, 0.5);
 }
